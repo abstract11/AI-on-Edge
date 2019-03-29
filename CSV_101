@@ -1,0 +1,52 @@
+CSV (Comma Seperated Values)
+What is a CSV?
+It is a plain text fie in a structured form. It can contain printable ASCII or unicode characters.
+example:
+  Heading:  Column 1 name, Column 2 name, Column 3 name
+  Row 1:    1st Row data1, 1st Row data2, 1st Row data3
+  Row 2:    2nd Row data1, 2nd Row data2, 3rd Row data3
+  
+Delimiter
+  The seperator character is called a delimiter.
+  It can be any one of the following: (,) (\t) (:) (;)
+  Always use seperrate delimiter depinding on the data
+    example:  If the data contains an address then there is a high probability that the data might contain a (,). So if you use the same delimiter the program gets confused and you will miss out on all the data is to be printed after the comma.
+              This is highly undesired and therfore we implement the pre=actise of using differnt delimiters.
+              You always have an option to wrap the data in quotes at the time of input. But is seen as a good practice and hence should be avoided.
+
+CSV Parser
+  1. Python CSV library - for generic requirement
+  2. Pandas Library - for more numerical analysis
+  
+What is our approach?
+  1. Read
+  2. Process
+  3. Parse
+  
+  
+1. Read
+Reading a CSV file happens in the following way.
+  1. Input -      A CSV file is selected.
+  2. Processing - It is opened using a function[open()]
+  3. Output -     The data is obtained in a text file
+
+2. Write
+Writing a CSV file happens in the following two parts
+  1. Writer object
+  2. .write_row()
+
+3. Parse
+We can parse a CSV library with a python built in function. Where, CSV lib provides the following functionality:
+  1. to read from CSV
+  2. to write to CSV
+  
+The module is called by import csv
+
+There are two attributes to emphasise on:
+  1. quote char - specifies the delimiter, which is in double qoutes.
+  2. escape char = specifes character used to escape the delimiter character.
+
+Below is a small example:
+  with open('employee_birthday.txt') as csv file;
+  csv_read = csv.reader(csv_file, delimiter = ',')
+  line_count = 0
